@@ -1,8 +1,8 @@
 class Appwrite < Formula
   desc "Command-line tool for interacting with the Appwrite API"
   homepage "https://appwrite.io"
-  license "BSD-3-Clause"
   version "18.2.0"
+  license "BSD-3-Clause"
 
   def self.binary_arch
     Hardware::CPU.arm? ? "arm64" : "x64"
@@ -26,6 +26,10 @@ class Appwrite < Formula
     raise "Homebrew formula is only supported on macOS and Linux"
   end
 
+  head "https://github.com/appwrite/sdk-for-cli.git", branch: "master" do
+    depends_on "bun" => :build
+  end
+
   # Release automation injects per-target SHA256 values when publishing binaries.
   on_macos do
     if Hardware::CPU.arm?
@@ -45,10 +49,6 @@ class Appwrite < Formula
       url "https://github.com/appwrite/sdk-for-cli/releases/download/#{version}/appwrite-cli-linux-x64"
       sha256 "38c127e173b5ea2e5b2f170979681156cd30060e39960cefb9a7abfda3353988"
     end
-  end
-
-  head "https://github.com/appwrite/sdk-for-cli.git", branch: "master" do
-    depends_on "bun" => :build
   end
 
   def install
