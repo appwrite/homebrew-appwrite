@@ -60,6 +60,8 @@ class Appwrite < Formula
       bin.install self.class.binary_name => "appwrite"
     end
 
+    (bin/"appwrite").chmod 0755
+
     generate_completions_from_executable(bin/"appwrite", "completion")
   end
 
