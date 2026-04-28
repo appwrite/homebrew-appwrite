@@ -56,13 +56,15 @@ class Appwrite < Formula
       system "bun", "install", "--frozen-lockfile"
       system "bun", "run", self.class.build_target
       bin.install "build/#{self.class.binary_name}" => "appwrite"
-      return
+    else
+      bin.install self.class.binary_name => "appwrite"
     end
 
-    bin.install self.class.binary_name => "appwrite"
+    generate_completions_from_executable(bin/"appwrite", "completion")
   end
 
   test do
     assert_match "Usage:", shell_output("#{bin}/appwrite --help")
+    assert_match "compdef", shell_output("#{bin}/appwrite completion zsh")
   end
 end
