@@ -13,9 +13,14 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Install bubblewrap (Linux)
+      - name: Install bubblewrap & enable user namespaces (Linux)
         if: runner.os == 'Linux'
-        run: sudo apt-get update && sudo apt-get install -y bubblewrap
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bubblewrap
+          # Ubuntu 24.04 restricts unprivileged user namespaces via AppArmor;
+          # Homebrew's Linux sandbox needs them. See `brew doctor` output.
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 
       - name: Set up Homebrew
         id: set-up-homebrew
