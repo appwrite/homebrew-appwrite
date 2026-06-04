@@ -1,7 +1,7 @@
 class Appwrite < Formula
   desc "Command-line tool for interacting with the Appwrite API"
   homepage "https://appwrite.io"
-  version "21.0.1"
+  version "22.0.0"
   license "BSD-3-Clause"
 
   def self.binary_arch
@@ -34,20 +34,20 @@ class Appwrite < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/appwrite/sdk-for-cli/releases/download/#{version}/appwrite-cli-darwin-arm64"
-      sha256 "06f9784c72de77f1ce2d72cc3ce10d7214d9c270e4e400af9dd2fa25b33c1445"
+      sha256 "a06d6b8734ff440da1050e6446b234873fba5ba55ebad652ae072c1ab48340f1"
     else
       url "https://github.com/appwrite/sdk-for-cli/releases/download/#{version}/appwrite-cli-darwin-x64"
-      sha256 "eb74ceec0108be6a05fc3f16f599efd055cc245f87e78d5b9f44f330af8548ff"
+      sha256 "e6ee48afbe7e20a2b412eaff575e46cdb75bc4d9166328752b4a74e3ea347e2c"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/appwrite/sdk-for-cli/releases/download/#{version}/appwrite-cli-linux-arm64"
-      sha256 "0c0d030f5b518751810d8c4c6430e67fefb92c26c7705e33cc8d478a9bc47ba3"
+      sha256 "65be2525814e9602f8b7489dde3b32c8f6193a23b467caa093555a2f43cd7d75"
     else
       url "https://github.com/appwrite/sdk-for-cli/releases/download/#{version}/appwrite-cli-linux-x64"
-      sha256 "a06ca0cf81c22c4f5d4d3fc35f1b5f06ed7a3d4c51c37b454b3b7196973d0956"
+      sha256 "1158c9379650581f8571bf43a291f1ea04529968ac3a5848c32a0c5f585ac3b8"
     end
   end
 
