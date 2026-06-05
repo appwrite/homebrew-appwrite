@@ -12,6 +12,8 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
+    env:
+      HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
     steps:
       - name: Install bubblewrap & enable user namespaces (Linux)
         if: runner.os == 'Linux'
