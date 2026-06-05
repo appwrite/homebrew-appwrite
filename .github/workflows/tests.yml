@@ -12,8 +12,6 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
-    env:
-      HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
     steps:
       - name: Install bubblewrap & enable user namespaces (Linux)
         if: runner.os == 'Linux'
@@ -34,6 +32,8 @@ jobs:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ matrix.os }}-rubygems-
+
+      - run: brew trust --tap appwrite/appwrite
 
       - run: brew test-bot --only-cleanup-before
 
