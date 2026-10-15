@@ -32,21 +32,21 @@ class Appwrite < Formula
   # Release automation injects per-target SHA256 values when publishing binaries.
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/appwrite/sdk-for-cli/releases/download/28.4.0/appwrite-cli-darwin-arm64"
-      sha256 "82dd9ab27ab5d48d4c4a2d0f4b10c24a1ac9684d978bbd16ccca40fdc10204b2"
+      url "https://github.com/appwrite/sdk-for-cli/releases/download/28.5.0/appwrite-cli-darwin-arm64"
+      sha256 "3f7d13366b67033bddcdf5bafeb87e3451c1fd4236276a7ac54fbb0f7aa4b8cc"
     else
-      url "https://github.com/appwrite/sdk-for-cli/releases/download/28.4.0/appwrite-cli-darwin-x64"
-      sha256 "dfc128699f6bdf37e725cc746e4b06834faeb8d4cbbcee3d8611d8121b559557"
+      url "https://github.com/appwrite/sdk-for-cli/releases/download/28.5.0/appwrite-cli-darwin-x64"
+      sha256 "bbe102ae53ee9575c32e9c9a2ad87a78f58705d7aceae689116c56ae468b1f06"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/appwrite/sdk-for-cli/releases/download/28.4.0/appwrite-cli-linux-arm64"
-      sha256 "d559436b44e062098e3c194d56d7e52871c98b8f34ab663d1b9330e09bf5fca4"
+      url "https://github.com/appwrite/sdk-for-cli/releases/download/28.5.0/appwrite-cli-linux-arm64"
+      sha256 "d501c71c2b7fd862156c93c6e01cb47b61ee047f50f7457ac7ffb6a106349bd5"
     else
-      url "https://github.com/appwrite/sdk-for-cli/releases/download/28.4.0/appwrite-cli-linux-x64"
-      sha256 "992b3688a73c394136e59f30570b46f2013e4d0231c0a14c12bbe62e34d6d4dc"
+      url "https://github.com/appwrite/sdk-for-cli/releases/download/28.5.0/appwrite-cli-linux-x64"
+      sha256 "0b16497e1383a2d49cba766da9731744db72593eb7612f384ab475eca7171607"
     end
   end
 
